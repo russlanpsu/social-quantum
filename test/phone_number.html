@@ -1,0 +1,13 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.30/angular.min.js"></script>
+    <script src="gistfile1.js"></script>
+</head>
+<body>
+<div ng-app="phonenumberModule" ng-controller="MyCntl">
+    <p>phonenumber value: {{ myModel.phonenumber }}</p>
+    <p>formatted phonenumber: {{ myModel.phonenumber | phonenumber }}</p>
+    <phonenumber-directive placeholder="myPrompt" model='myModel.phonenumber'></phonenumber-directive>
+</div>
+</body>
+</html>
