@@ -10,9 +10,8 @@ use app\models\Countries;
 /* @var $model app\models\Users */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile("js/jquery-3.1.0.min.js");
-$this->registerJsFile("js/jquery.formatter.js");
-$this->registerJsFile("js/phone-number.js");
+//$this->registerJsFile("js/jquery-3.1.0.min.js");
+
 
 
 ?>
@@ -36,5 +35,8 @@ $this->registerJsFile("js/phone-number.js");
     </div>
 
     <?php ActiveForm::end(); ?>
-
+    <?php
+    $this->registerJsFile('web\js\jquery.formatter.js', ['depends' => 'yii\web\JqueryAsset']);
+    $this->registerJsFile('web\js\phone-number.js', ['depends' => 'web\js\jquery.formatter.js']);
+    ?>
 </div>
