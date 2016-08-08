@@ -5,9 +5,16 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use app\models\Countries;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Users */
 /* @var $form yii\widgets\ActiveForm */
+
+$this->registerJsFile("js/jquery-3.1.0.min.js");
+$this->registerJsFile("js/jquery.formatter.js");
+$this->registerJsFile("js/phone-number.js");
+
+
 ?>
 
 <div class="users-form">
@@ -23,7 +30,6 @@ use app\models\Countries;
         ['prompt' => 'выберите страну']
     ) ?>
 
-    <?= '<input type="text" id="users-test_field" class="form-control" name="Users[test_field]" maxlength="18">' ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

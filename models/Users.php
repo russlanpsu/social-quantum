@@ -31,8 +31,8 @@ class Users extends \yii\db\ActiveRecord
     {
         return [
             [['country_id'], 'integer'],
-            [['fio', 'test_field'], 'string', 'max' => 100],
-            [['phone'], 'string', 'max' => 18],
+            [['fio'], 'string', 'max' => 100],
+            [['phone'], 'string', 'max' => 30],
             [['country_id'], 'exist', 'skipOnError' => true, 'targetClass' => Countries::className(), 'targetAttribute' => ['country_id' => 'id']],
         ];
     }
@@ -43,11 +43,10 @@ class Users extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'fio' => 'Fio',
-            'phone' => 'Phone',
-            'country_id' => 'Country',
-            'test_field' => 'This is test field'
+//            'id' => 'ID',
+            'fio' => 'ФИО',
+            'phone' => 'Телефон',
+            'country_id' => 'Страна'
         ];
     }
 
